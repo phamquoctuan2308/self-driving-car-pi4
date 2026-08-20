@@ -1,0 +1,12 @@
+# Thư viện thị giác máy tính & học sâu
+opencv-contrib-python>=4.8.0   # bao gồm module cv2.aruco cho phát hiện marker
+ultralytics>=8.1.0              # YOLOv8 (huấn luyện, suy luận, export NCNN/TFLite)
+numpy>=1.24.0
+
+# Giao tiếp & phần cứng Raspberry Pi
+picamera2>=0.3.12               # driver camera chính thức cho Raspberry Pi OS (Bullseye/Bookworm)
+pyserial>=3.5                   # giao tiếp UART giữa Raspberry Pi và Arduino
+
+# (Tuỳ chọn) Xuất/chạy mô hình tối ưu cho thiết bị nhúng
+ncnn>=1.0.20231027
+tflite-runtime>=2.14.0; platform_machine == "aarch64"

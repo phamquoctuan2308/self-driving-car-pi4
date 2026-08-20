@@ -1,12 +1,12 @@
 import cv2
 import numpy as np
 from collections import deque
-from config.settings import FRAME_HEIGHT
+from config.settings import frame_height, marker_history
 
 node_history = deque(maxlen=5)
 
 def detect_node_color(frame):
-    roi = frame[FRAME_HEIGHT // 2 : FRAME_HEIGHT, :]
+    roi = frame[frame_height // 2 : frame_height, :]
     hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
     hsv = cv2.GaussianBlur(hsv, (5,5), 0)
 

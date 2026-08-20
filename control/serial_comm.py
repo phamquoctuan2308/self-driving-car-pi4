@@ -1,10 +1,10 @@
 import serial
 import time
-from config.settings import SERIAL_PORT, BAUD_RATE
+from config.settings import serial_port, baud_rate
 
 def init_serial():
     try:
-        ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=0)
+        ser = serial.Serial(serial_port, baud_rate, timeout=0)
         time.sleep(2)
         return ser
     except:

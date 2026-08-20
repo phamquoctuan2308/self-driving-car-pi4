@@ -1,15 +1,18 @@
+import math
+import serial
+import numpy as np
 from ultralytics import YOLO
 from picamera2 import Picamera2
 import time
 import cv2
 
 from config.settings import *
-from perception.node_detection import detect_node_color
-from perception.lane_detection import compute_steering
+from perception.node_detection import detect_node_color, detect_aruco_marker
+from perception.lane_detection import get_centroid
 from perception.object_detection import detect_traffic_stop
 from control.serial_comm import init_serial, send_control
+from control.steering import compute_steering
 from utils.visualization import draw_steering_gauge
-from perception.aruco_detection import detect_aruco_marker
 def main():
     print("[info] khoi tao mo hinh va camera...")
     lane_model = YOLO(lane_model_path, task="segment")

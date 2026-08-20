@@ -1,6 +1,10 @@
 import numpy as np
 import math
 import cv2
+
+from perception.lane_detection import get_centroid
+
+
 def compute_steering(masks, cam_x, cam_y, last_angle):
     if masks is None or len(masks.xy) == 0:
         return last_angle, None

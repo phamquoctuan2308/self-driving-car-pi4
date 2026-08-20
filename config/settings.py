@@ -1,5 +1,5 @@
 import os
-os.environ['OPENBLAS_CORETYPE'] = 'ARMV8'
+from collections import deque
 
 # --- CẤU HÌNH HỆ THỐNG ---
 os.environ['OPENBLAS_CORETYPE'] = 'ARMV8'
